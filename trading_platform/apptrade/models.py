@@ -28,6 +28,9 @@ class Item(StockBase):
     )
     details = models.TextField('Details', blank=True, null=True, max_length=512)
 
+    def __str__(self):
+        return self.code
+
 
 class WatchList(models.Model):
     user = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
